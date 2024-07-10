@@ -1,0 +1,15 @@
+<h1><%= @produto.nome %></h1>
+<p>
+  <strong>Descrição:</strong>
+  <%= @produto.descricao %>
+</p>
+<p>
+  <strong>Preço:</strong>
+  <%= number_to_currency(@produto.preco) %>
+</p>
+<p>
+  <strong>Quantidade em Estoque:</strong>
+  <%= @produto.quantidade_estoque %>
+</p>
+<%= link_to 'Editar', edit_produto_path(@produto) %> |
+<%= link_to 'Voltar', produtos_path %>

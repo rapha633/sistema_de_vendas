@@ -1,0 +1,7 @@
+<%= form_with(model: @venda) do |form| %>
+  <div id="itens_venda_fields">
+    <%= render 'itens_venda_fields', f: form %>
+  </div>
+  <%= link_to_add_fields 'Adicionar Item', form, :itens_venda %>
+  <%= form.submit %>
+<% end %>

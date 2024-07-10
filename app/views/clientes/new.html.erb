@@ -1,0 +1,18 @@
+<h1>Cadastrar Novo Cliente</h1>
+<%= form_with(model: @cliente, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :telefone %>
+    <%= form.text_field :telefone %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Cadastrar Cliente' %>
+  </div>
+<% end %>

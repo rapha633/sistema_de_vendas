@@ -1,0 +1,14 @@
+<h1>Cadastrar Nova Venda</h1>
+<%= form_with(model: @venda, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :cliente_id, "Cliente" %>
+    <%= form.collection_select :cliente_id, Cliente.all, :id, :nome, prompt: "Selecione um cliente" %>
+  </div>
+  <div id="itens_venda_fields">
+    <%= render 'itens_venda_fields', form: form %>
+  </div>
+  <%= link_to "Adicionar Item", '#', class: 'add_fields', data: { id: 'itens_venda_fields_template', fields: raw(j(render 'itens_venda_fields', form: form)) } %>
+  <div class="actions">
+    <%= form.submit 'Cadastrar Venda' %>
+  </div>
+<% end %>

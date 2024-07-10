@@ -1,0 +1,23 @@
+<h1>Vendas</h1>
+<% if @vendas.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Cliente</th>
+        <!-- Outros cabeçalhos de coluna, se necessário -->
+      </tr>
+    </thead>
+    <tbody>
+      <% @vendas.each do |venda| %>
+        <tr>
+          <td><%= venda.id %></td>
+          <td><%= venda.cliente.nome %></td>
+          <!-- Outras colunas da venda -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>Nenhuma venda encontrada.</p>
+<% end %>

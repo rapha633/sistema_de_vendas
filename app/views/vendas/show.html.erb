@@ -1,0 +1,13 @@
+<h1>Venda <%= @venda.id %></h1>
+<p>
+  <strong>Cliente:</strong>
+  <%= @venda.cliente.nome %>
+</p>
+<h2>Itens</h2>
+<ul>
+  <% @venda.itens_venda.each do |item| %>
+    <li><%= item.produto.nome %> - Quantidade: <%= item.quantidade %></li>
+  <% end %>
+</ul>
+<%= link_to 'Cancelar Venda', venda_path(@venda), method: :delete, data: { confirm: 'Tem certeza?' } %>
+<%= link_to 'Voltar', vendas_path %>
